@@ -48,10 +48,10 @@ export default function App() {
         <Navbar />
         <Outlet />
         <ScrollRestoration />
-        <Scripts />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
         <Footer />
       </body>
+      <Scripts />
     </html>
   )
 }
