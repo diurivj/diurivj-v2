@@ -49,9 +49,9 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         {process.env.NODE_ENV === 'development' && <LiveReload />}
+        <Scripts />
         <Footer />
       </body>
-      <Scripts />
     </html>
   )
 }
@@ -104,8 +104,8 @@ export function CatchBoundary() {
               </Link>
             </nav>
           </footer>
+          <Scripts />
         </div>
-        <Scripts />
       </body>
     </html>
   )
