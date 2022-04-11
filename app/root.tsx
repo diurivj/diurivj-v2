@@ -5,7 +5,30 @@ import { Navbar } from './components/Navbar'
 import styles from './styles/app.css'
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }]
+  return [
+    {
+      rel: 'preload',
+      as: 'font',
+      href: '/assets/NeueMachina-Light.otf',
+      type: 'font/otf',
+      crossOrigin: 'anonymous'
+    },
+    {
+      rel: 'preload',
+      as: 'font',
+      href: '/assets/NeueMachina-Regular.otf',
+      type: 'font/otf',
+      crossOrigin: 'anonymous'
+    },
+    {
+      rel: 'preload',
+      as: 'font',
+      href: '/assets/NeueMachina-Ultrabold.otf',
+      type: 'font/otf',
+      crossOrigin: 'anonymous'
+    },
+    { rel: 'stylesheet', href: styles }
+  ]
 }
 
 export const meta: MetaFunction = () => ({
