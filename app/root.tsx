@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration
 } from '@remix-run/react'
+import { getSocialMetas } from './utils/seo'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import styles from './styles/app.css'
@@ -39,11 +40,20 @@ export function links() {
   ]
 }
 
-export const meta: MetaFunction = () => ({
-  charset: 'utf-8',
-  title: 'Diurivj',
-  viewport: 'width=device-width,initial-scale=1'
-})
+export const meta: MetaFunction = () => {
+  const title = 'Diurivj'
+  const description = `Diurivj's personal website`
+
+  return {
+    charset: 'utf-8',
+    viewport: 'width=device-width,initial-scale=1',
+    ...getSocialMetas({
+      title,
+      description,
+      url: 'https://diurivj.com'
+    })
+  }
+}
 
 export default function App() {
   return (
